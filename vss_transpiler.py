@@ -82,22 +82,55 @@ def vss_to_python(src: str) -> str:
     return "\n".join(out_lines)
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python vss_transpiler.py file.vss")
-        sys.exit(1)
-
+    """Main entry point for VSS"""
+    if len(sys.argv) < 2:
+        print("VSS Programming Language v2.0")
+        print("Usage: vss <file.vss>")
+        print("       vss --help")
+        print("       vss --version")
+        sys.exit(0)
+    
+    arg = sys.argv[1]
+    
+    if arg in ['--help', '-h']:
+        print("VSS Programming Language v2.0")
+        print("")
+        print("Usage: vss <file.vss>")
+        print("")
+        print("Options:")
+        print("  --help, -h       Show this help message")
+        print("  --version, -v    Show version information")
+        print("")
+        print("Examples:")
+        print("  vss myprogram.vss")
+        print("  vss examples/hello.vss")
+        print("")
+        print("GitHub: https://github.com/siddharth-1118/vss-lang")
+        sys.exit(0)
+    
+    if arg in ['--version', '-v']:
+        print("VSS Programming Language v2.0")
+        print("Python-like language with Telugu-style English keywords")
+        print("GitHub: https://github.com/siddharth-1118/vss-lang")
+        sys.exit(0)
+    
+    # Run VSS file
     src_path = Path(sys.argv[1])
+    
     if not src_path.exists():
-        print(f"File not found: {src_path}")
+        print(f"Error: File '{sys.argv[1]}' not found")
+        print("")
+        print("Usage: vss <file.vss>")
+        print("Try: vss --help")
         sys.exit(1)
-
+    
     code = src_path.read_text(encoding="utf-8")
     py_code = vss_to_python(code)
-
+    
     # Save generated Python (for debugging)
     tmp = src_path.with_suffix(".vss.py")
     tmp.write_text(py_code, encoding="utf-8")
-
+    
     # Run generated Python
     exec(compile(py_code, str(tmp), "exec"), {})
 
