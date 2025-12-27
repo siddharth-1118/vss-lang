@@ -1,0 +1,15 @@
+# Hello World in VSS
+# Your first VSS program
+
+mudinchu("Hello, World!")
+mudinchu("Welcome to VSS - Telugu-style Python!")
+
+# Get user input
+peru = teesuko("nee peru: ")
+mudinchu("Namaste, " + peru + "!")
+
+# Simple math
+a = 10
+b = 5
+mudinchu("Sum: " + str(a + b))
+mudinchu("Product: " + str(a * b))
