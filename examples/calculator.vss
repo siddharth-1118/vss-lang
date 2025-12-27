@@ -1,0 +1,70 @@
+# Simple Calculator in VSS
+# Demonstrates functions, conditionals, loops, and exception handling
+
+teesuku_ravu math
+
+lekka add(a, b):
+    tirugu a + b
+
+lekka subtract(a, b):
+    tirugu a - b
+
+lekka multiply(a, b):
+    tirugu a * b
+
+lekka divide(a, b):
+    prayatnam:
+        tirugu a / b
+    tappina ZeroDivisionError:
+        mudinchu("Error: Cannot divide by zero!")
+        tirugu None
+
+lekka power(a, b):
+    tirugu math.pow(a, b)
+
+lekka calculator():
+    mudinchu("=" * 40)
+    mudinchu("VSS Calculator")
+    mudinchu("=" * 40)
+    
+    varaku nijam:
+        mudinchu("\nOperations:")
+        mudinchu("1. Add")
+        mudinchu("2. Subtract")
+        mudinchu("3. Multiply")
+        mudinchu("4. Divide")
+        mudinchu("5. Power")
+        mudinchu("6. Exit")
+        
+        choice = teesuko("\nEnter choice (1-6): ")
+        
+        aithe choice == "6":
+            mudinchu("Thank you for using VSS Calculator!")
+            break
+        
+        prayatnam:
+            num1 = float(teesuko("Enter first number: "))
+            num2 = float(teesuko("Enter second number: "))
+            
+            aithe choice == "1":
+                mudinchu("Result: " + str(add(num1, num2)))
+            inkaa choice == "2":
+                mudinchu("Result: " + str(subtract(num1, num2)))
+            inkaa choice == "3":
+                mudinchu("Result: " + str(multiply(num1, num2)))
+            inkaa choice == "4":
+                result = divide(num1, num2)
+                aithe result != None:
+                    mudinchu("Result: " + str(result))
+            inkaa choice == "5":
+                mudinchu("Result: " + str(power(num1, num2)))
+            lekapothe:
+                mudinchu("Invalid choice!")
+        
+        tappina ValueError:
+            mudinchu("Error: Please enter valid numbers!")
+        tappina Exception:
+            mudinchu("Error: Something went wrong!")
+
+# Run calculator
+calculator()
