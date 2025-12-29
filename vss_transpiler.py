@@ -31,6 +31,25 @@ KEYWORD_MAP = {
     "inkaa_tappina": "except",
     "ledante": "else",
     "chivariki": "finally",
+        
+    # Loop Control
+    "aagu": "break",
+    "kaalipoyedu": "continue",
+    "viduchu": "pass",
+    
+    # Other Keywords
+    "etthu": "raise",
+    "emitiko": "None",
+    "undi": "in",
+    "atade": "is",
+    "anthe": "as",
+    "theeseyi": "del",
+    "parisheelana": "assert",
+    "tho": "with",
+    "lopo": "lambda",
+    "ivvu": "yield",
+    "anni_chota": "global",
+    "bayata": "nonlocal",
 
     # Classes
     "taragati": "class",
@@ -67,6 +86,10 @@ def translate_line(line: str) -> str:
         ("kaadu", "not"),
         ("nijam", "True"),
         ("abaddam", "False"),
+                ("emitiko", "None"),
+        ("undi", "in"),
+        ("atade", "is"),
+        ("anthe", "as"),
     ]:
         stripped = stripped.replace(" " + vss_kw + " ", " " + py_kw + " ")
 
