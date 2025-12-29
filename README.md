@@ -93,6 +93,33 @@ python vss_transpiler.py hello.vss
 - `mudinchu(...)` → `print(...)`
 - `teesuko(...)` → `input(...)`
 
+- ### Loop Control
+- `aagu` → `break`
+- `kaalipoyedu` → `continue`  
+- `viduchu` → `pass`
+
+### Values & Operators
+- `emitiko` → `None`
+- `undi` → `in`
+- `atade` → `is`
+- `anthe` → `as` (for imports)
+
+### Memory Management
+- `theeseyi` → `del`
+
+### Testing & Debugging
+- `parisheelana` → `assert`
+
+### Context Managers
+- `tho` → `with`
+
+### Advanced Features
+- `lopo` → `lambda`
+- `ivvu` → `yield`
+- `anni_chota` → `global`
+- `bayata` → `nonlocal`
+- `etthu` → `raise`
+
 ## Example Programs
 
 ### Hello World
