@@ -7,8 +7,7 @@ README = (HERE / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="vss-lang",
-    version="2.0.0",
-    author="Siddharth",
+    version="2.1.0",    author="Siddharth",
     author_email="saisiddharthwoota@gmail.com",
     description="VSS Programming Language - Python with Telugu-style English keywords",
     long_description=README,
@@ -45,6 +44,6 @@ setup(
             "vss=vss_transpiler:main",
         ],
     },
-    keywords="vss telugu programming-language transpiler python interpreter",
+    keywords="vss telugu english programming-language python-like transpiler interpreter lekka mudinchu chupu aithe leni daka prati loop function class try except import as from with open read write file variables operators .vss vss-lang vss-language telugu-style",
     license="MIT",
 )
