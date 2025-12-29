@@ -12,17 +12,35 @@
 
 ## Installation
 
-1. Clone this repository:
+### 🚀 Quick Install (Recommended)
+
+**Option 1: Install directly from GitHub (No Git required)**
+```bash
+pip install git+https://github.com/siddharth-1118/vss-lang.git
+vss --version
+```
+
+**Option 2: Clone and Install**
 ```bash
 git clone https://github.com/siddharth-1118/vss-lang.git
 cd vss-lang
+pip install -e .
+vss --version
 ```
 
-2. Ensure you have Python 3.7+ installed:
+**Option 3: Download ZIP (No Git needed)**
+1. Download: [Latest Release v2.1.0](https://github.com/siddharth-1118/vss-lang/releases/latest)
+2. Extract the ZIP file
+3. Open terminal in the extracted folder:
 ```bash
-python --version
+pip install -e .
+vss --version
 ```
 
+### 📦 Requirements
+
+- Python 3.7 or higher
+- pip (Python package manager)
 ## Quick Start
 
 1. Create a file `hello.vss`:
