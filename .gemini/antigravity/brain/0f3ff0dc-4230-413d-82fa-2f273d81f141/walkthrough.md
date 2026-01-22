@@ -44,12 +44,9 @@ npm run preview
 ## 4. Publishing & Deployment
 I have prepared the project for deployment based on your upload to PyPI.
 
-- **Git Repository**: Initialized a local git repository. You can add a remote and push:
-  ```bash
-  git remote add origin <your-github-repo-url>
-  git branch -M main
-  git push -u origin main
-  ```
+- **Git Repository**: Code has been pushed to [https://github.com/siddharth-1118/vss-lang](https://github.com/siddharth-1118/vss-lang).
+  - Branch: `main`
+  - Status: Up to date with local changes including the website update.
 - **Website Update**: The website's hero section now displays the installation command:
   `pip install telpy`
 
