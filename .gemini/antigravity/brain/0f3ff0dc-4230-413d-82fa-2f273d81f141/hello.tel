@@ -1,0 +1,13 @@
+pani greet(name) nirvachinchu:
+    "Namaskaram " + name chupinchu()
+
+x = 10
+y = 5
+
+# SOV Comparison
+okavela x y kanna_pedda ayithe:
+    "x is bigger" chupinchu()
+lekapothe:
+    "x is smaller" chupinchu()
+
+greet("Prapancham")

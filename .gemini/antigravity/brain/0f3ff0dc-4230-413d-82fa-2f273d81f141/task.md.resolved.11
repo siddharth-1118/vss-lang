@@ -1,0 +1,40 @@
+# Task: Design & Implement TelPy (Telugu-based Python Dialect)
+
+- [x] Phase 1: Lexical Design (Keywords & Operators) <!-- id: 0 -->
+    - [x] Create a glossary of Python keywords mapped to Telugu (Romanized) <!-- id: 1 -->
+    - [x] Map Python operators to Telugu equivalents <!-- id: 2 -->
+    - [x] Review for consistent Romanization (ISO 15919 modified) <!-- id: 3 -->
+- [x] Phase 2: Syntactic & Semantic Adaptation <!-- id: 4 -->
+    - [x] Define control flow structures (if/else, loops) in Telugu syntax <!-- id: 5 -->
+    - [x] Define function definition and calling conventions <!-- id: 6 -->
+- [x] Phase 3: Standard Library & Error Message Localization <!-- id: 7 -->
+    - [x] Map common built-in functions (print, len, range, etc.) <!-- id: 8 -->
+    - [x] Design localized error messages (KeyError, SyntaxError, etc.) <!-- id: 9 -->
+- [x] Phase 4: Transpiler Architecture Specification <!-- id: 10 -->
+    - [x] Define Tokenizer requirements <!-- id: 11 -->
+    - [x] Define Parser/AST generation strategy <!-- id: 12 -->
+    - [x] Define Code Generator (Source-to-Source) strategy <!-- id: 13 -->
+- [x] Phase 5: Final Report Generation <!-- id: 14 -->
+    - [x] Compile Executive Summary & Philosophy <!-- id: 15 -->
+    - [x] Create Core Language Specification Table <!-- id: 16 -->
+    - [x] Generate Example Code Comparisons <!-- id: 17 -->
+    - [x] Write Technical Implementation Roadmap <!-- id: 18 -->
+    - [x] detail Considerations for Developers <!-- id: 19 -->
+- [x] Phase 6: Implementation - Core Transpiler <!-- id: 20 -->
+    - [x] Setup Project Structure ([telpy/](file:///C:/Users/saisi/.gemini/antigravity/brain/0f3ff0dc-4230-413d-82fa-2f273d81f141/telpy/compiler.py#180-191)) and [requirements.txt](file:///C:/Users/saisi/.gemini/antigravity/brain/0f3ff0dc-4230-413d-82fa-2f273d81f141/requirements.txt) <!-- id: 21 -->
+    - [x] Define Grammar (`grammar.lark`) <!-- id: 22 -->
+    - [x] Implement Lexicon Mapping ([lexicon.py](file:///C:/Users/saisi/.gemini/antigravity/brain/0f3ff0dc-4230-413d-82fa-2f273d81f141/telpy/lexicon.py)) <!-- id: 23 -->
+    - [x] Implement Transpiler ([compiler.py](file:///C:/Users/saisi/.gemini/antigravity/brain/0f3ff0dc-4230-413d-82fa-2f273d81f141/telpy/compiler.py)) and CLI (`main.py`) <!-- id: 24 -->
+    - [x] Verify with [hello.tel](file:///C:/Users/saisi/.gemini/antigravity/brain/0f3ff0dc-4230-413d-82fa-2f273d81f141/hello.tel) <!-- id: 25 -->
+- [x] Phase 7: Website Development <!-- id: 26 -->
+    - [x] Initialize Vite Project (`telpy-web`) <!-- id: 27 -->
+    - [x] Design Hero Section & Navigation <!-- id: 28 -->
+    - [x] Implement "Philosophy" & "Features" Sections <!-- id: 29 -->
+    - [x] Create Interactive/Static Code Comparison Demo <!-- id: 30 -->
+    - [x] Implement Docs/Reference Page <!-- id: 31 -->
+    - [x] Polish UI (Animations, Responsive Design) <!-- id: 32 -->
+- [x] Phase 8: Publishing & Deployment Support <!-- id: 33 -->
+    - [x] Initialize Git Repository <!-- id: 34 -->
+    - [x] Update Website with PyPI Install Command <!-- id: 35 -->
+    - [x] Rebuild Website <!-- id: 36 -->
+- [x] Push to GitHub <!-- id: 37 -->

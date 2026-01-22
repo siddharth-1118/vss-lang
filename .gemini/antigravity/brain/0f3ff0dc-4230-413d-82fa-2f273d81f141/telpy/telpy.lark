@@ -1,0 +1,111 @@
+// TelPy Grammar using Lark
+
+%import common.WS_INLINE
+%import common.NEWLINE
+%import common.CNAME
+%import common.NUMBER
+%import common.ESCAPED_STRING
+
+%declare _INDENT _DEDENT
+
+start: (_NEWLINE | stmt)*
+
+stmt: simple_stmt | compound_stmt
+
+simple_stmt: (expr_stmt | flow_stmt | import_stmt) _NEWLINE
+
+expr_stmt: assign_stmt | expr
+
+assign_stmt: NAME "=" expr
+
+flow_stmt: return_stmt | break_stmt | continue_stmt | pass_stmt
+
+return_stmt: expr "phalam_ivvu" | "phalam_ivvu" expr
+break_stmt: "aapu"
+continue_stmt: "konasagu"
+pass_stmt: "vadhiley"
+
+import_stmt: "thechuko" dotted_name
+
+compound_stmt: if_stmt | for_stmt | while_stmt | func_def
+
+// Control Flow
+if_stmt: "okavela" test "ayithe" suite ("lekapothe_okavela" test "ayithe" suite)* ("lekapothe" suite)?
+
+for_stmt: "prathi" NAME "," test "lo" suite
+
+while_stmt: test "varaku" suite 
+
+func_def: "pani" NAME "(" [params] ")" "nirvachinchu" suite
+
+params: param ("," param)*
+param: NAME
+
+suite: ":" _NEWLINE _INDENT stmt+ _DEDENT
+
+// Expressions 
+// Logic: Support Postfix for Comparisons (SOV) but Infix for Math
+test: or_test 
+
+or_test: and_test ("leka" and_test)*
+and_test: not_test ("mariyu" not_test)*
+not_test: "kaadu" not_test | comparison
+
+// Postfix Comparison: expr expr op  (e.g., x 5 kanna_pedda)
+comparison: expr expr comp_op 
+          | expr                // Fallthrough if valid boolean expr
+
+// Math (Infix)
+expr: term (add_op term)*
+term: factor (mul_op factor)*
+factor: ("+" | "-") factor | power
+power: atom_expr ["**" factor]
+
+atom_expr: atom_expr "(" [arguments] ")" -> funccall
+         | atom_expr "[" subscripts "]"  -> getitem
+         | atom_expr "." NAME            -> getattr
+         | atom
+
+atom: NAME             -> var
+    | NUMBER           -> number
+    | ESCAPED_STRING   -> string
+    | "emiledu"        -> const_none
+    | "nizam"          -> const_true
+    | "abaddham"       -> const_false
+    | "(" test ")"
+
+arguments: argvalue ("," argvalue)*
+argvalue: test
+
+subscripts: test
+
+// Operators
+comp_op: "kanna_pedda"        -> op_gt
+       | "kanna_chinna"       -> op_lt
+       | "samam"              -> op_eq
+       | "ki_samam"           -> op_eq
+       | "asamam"             -> op_neq
+       | "kanna_pedda_samam"  -> op_ge
+       | "kanna_chinna_samam" -> op_le
+       | "lo"                 -> op_in
+       | "undi"               -> op_is
+
+add_op: "+" -> op_add
+      | "-" -> op_sub
+      | "kooda" -> op_add
+      | "theesiveyi" -> op_sub
+
+mul_op: "*" -> op_mul
+      | "/" -> op_div
+      | "%" -> op_mod
+      | "hechinchu" -> op_mul
+      | "bhaginchu" -> op_div
+      | "sesham" -> op_mod
+
+dotted_name: NAME ("." NAME)*
+
+// Utils
+_NEWLINE: ( /\r?\n[\t ]*/ | COMMENT )+
+COMMENT: /#.*/
+
+%ignore WS_INLINE
